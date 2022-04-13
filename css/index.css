@@ -79,16 +79,15 @@ h2{
 
 .header ul{
   position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
+  top: 60%;
+  right: 2%;
 }
 
 .header ul li{
   display: flex;
   align-items: center;
   color: white;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  text-shadow: black 1px 5px 5px;
 }
 
 .header ul li:nth-child(2){
