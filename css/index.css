@@ -1,0 +1,392 @@
+@import url(./reset.css);
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 5% 0;
+  font-family: 微軟正黑體;
+}
+
+h2{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #1736DC;
+  text-align: center;
+  margin: 130px 0 48px;
+}
+
+.wrap{
+  width: 1024px;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  box-shadow: 0px 2px 3px 2px rgb(0 0 0 / 20%);
+}
+
+.header{
+  height: 500px;
+  background-image: url(/images/IMG_5982.JPG);
+  background-position:0 55%;
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+}
+
+/* 運用偽元素製作空白區塊，再以clip-path語法裁切可視區域*/
+.header::after{
+  position: absolute;
+  content: '';
+  width:100%;
+  height: 50%;
+  background-color: #FAFAFA;
+  bottom: 0;
+  clip-path: polygon(100% 100%,100% 100%,0% 100%,20% 50%);
+}
+
+.header .personal{
+  position: absolute;
+  top: 55%;
+  left: 135px;
+  text-align: center;
+  z-index: 10;
+}
+
+.header .personal img{
+  width: 151px;
+  height: 151px;
+  border-radius: 50%;
+  margin-bottom: 11px;
+}
+
+.header .personal h1{
+  line-height: 56px;
+  font-size: 42px;
+  margin-bottom: 9px;
+}
+
+.header .personal p{
+  font-size: 14px;
+  line-height: 19px;
+  color: #4A4A4A;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.header .personal p:last-child{
+  margin-bottom:0;
+}
+
+.header ul{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.header ul li{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.header ul li:nth-child(2){
+  margin: 12px 0;
+}
+
+.header ul .pic{
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+  position: relative;
+}
+
+.header ul img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.skills_block .skill_type{
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills_block .skill_detail{
+  position: relative;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.20);
+  border-bottom: 5px solid #F58D23;
+  border-radius: 5px;
+  width: 284px;
+  height: 276px;
+  background-color: #FFFFFF;
+}
+
+.skills_block .skill_detail:nth-child(2){
+  border-bottom: 5px solid #539E43;
+}
+
+.skills_block .skill_detail:nth-child(3){
+  border-bottom: 5px solid #6762A6;
+}
+
+.skills_block .skill_detail img{
+  position: absolute;
+  bottom: 172px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.skills_block .skill_detail p{
+  position: absolute;
+  font-size: 18px;
+  line-height: 24px;
+  bottom: 123px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.skills_block .skill_detail ul{
+  position: absolute;
+  width: 220px;
+  height: 70px;
+  font-size: 14px;
+  list-style: disc;
+  bottom: 27px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills_block .skill_detail li{
+  font-size: 12px;
+  transform: scale(0.83);
+  text-indent: 15px;
+  line-height: 14px;
+}
+
+.experience_block{
+  position: relative;
+}
+
+.experience_block h2{
+  margin: 50px 0 48px;
+}
+
+.experience_block .start_dot{
+  text-align: center;
+  position: relative;
+  /*font-size為0下面偽元素才不會有預設空隙*/
+  font-size: 0;
+}
+
+.experience_block .start_dot::before{
+  position: absolute;
+  left: 50%;
+  top: 697px;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 4px;
+  content: '';
+  background-color: #D8D8D8;
+}
+
+.experience_block .start_dot::after{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 660px;
+  content: '';
+  background-color: #D8D8D8;
+}
+
+.timeline_item{
+  margin-top: 7px;
+  /*絕對定位會讓高度消失，設定最小高度撐開*/
+  min-height: 136px;
+}
+
+.timeline_item:nth-child(3){
+  margin-top: 48px;
+  position: relative;
+}
+
+.timeline_item:nth-child(4){
+  position: relative;
+}
+
+.timeline_item .time_dot_block{
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  margin-right: 13px;
+  font-size: 0;
+}
+
+.timeline_item .card{
+  width: 260px;
+  height: 136px;
+  border: 1px solid #FB56BF;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  position: absolute;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.53px;
+  font-weight: bold;
+}
+
+.timeline_item.right .card{
+  left: 52%;
+  padding-left: 12px;
+  text-align: left;
+} 
+
+.timeline_item.left .card{
+  right: 52%;
+  padding-right: 12px;
+  text-align: right;
+} 
+
+.timeline_item .card p:nth-child(1){
+  padding-top: 8px;
+  color: #4A4A4A;
+  margin-bottom: 10px;
+}
+
+.timeline_item .card p:nth-child(2){
+  color: #8A1737;
+  margin-bottom: 12px;
+}
+
+.timeline_item .card p:nth-child(3){
+  color: #4A4A4A;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.timeline_item .card span{
+  width: 120%;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  color: #9B9B9B;
+  letter-spacing: 0.44px;
+  line-height: 18px;
+  transform: scale(0.83);
+  transform-origin:left top;
+  word-wrap:break-word;
+}
+
+.timeline_item.left .card span{
+  padding-left: 12px;
+  word-wrap:break-word;
+}
+
+.works_items :nth-child(1) .works_img{
+  background-color: #424242;
+}
+
+.works_items :nth-child(2) .works_img{
+  background-color: #FDB4E3;
+}
+
+.works_items :nth-child(3) .works_img{
+  background-color: #8AD7FA;
+}
+
+.works_detail{
+  width: 284px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.works_detail a{
+  text-decoration: none;
+}
+
+.works_detail:hover{
+  transition: .2s;
+  box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 20%);
+}
+
+.works_items .works_img{
+  width: 284px;
+  height: 150px;
+  position: relative;
+}
+
+.works_items .works_img img{
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*:nth-child須為連續的子物件，空一格代表選擇子元素*/
+/* .works_items :nth-child(1) a img{
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+} */
+
+.works_block .works_items{
+  display: flex;
+  justify-content: space-around;
+}
+
+.works_items .works_info{
+  padding: 9px 8px;
+}
+
+.works_items .works_info p{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 7px;
+}
+
+.works_items .works_info p:nth-child(2){
+  color: #4A4A4A ;
+  font-weight: normal;
+  margin-bottom: 9px;
+}
+
+.about_me_block .about_content{
+  display: flex;
+  justify-content: center;
+}
+
+.about_me_block .about_content img{
+  width: 260px;
+  /* height: 335px; */
+  margin-right: 44px;
+}
+
+.about_me_block .about_content .introduction{
+  width: 442px;
+  word-wrap: break-word;
+  word-spacing: 0.44px;
+  line-height: 18px;
+}
+
+.footer{
+  margin-top: 74px;
+  position: relative;
+  font-size: 0;
+}
+
+.footer p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
