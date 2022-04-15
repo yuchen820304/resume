@@ -19,17 +19,11 @@ h2{
 }
 
 .wrap{
-  width: 1024px;
+  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
   background-color: #FAFAFA;
   box-shadow: 0px 2px 3px 2px rgb(0 0 0 / 20%);
-}
-
-@media screen and (max-width: 1024px){
-  .wrap {
-    max-width: 1024px;
-    width: 100%;
-  }
 }
 
 .header{
@@ -110,6 +104,7 @@ h2{
 
 @media screen and (max-width:1024px){
   .header ul{
+    width: 100%;
     top: 30%;
     left: 50%;
     right: 0;
@@ -303,6 +298,7 @@ h2{
   margin-top: 7px;
   /*絕對定位會讓高度消失，設定最小高度撐開*/
   min-height: 136px;
+  position: relative;
 }
 
 @media screen and (max-width: 600px){
@@ -319,24 +315,17 @@ h2{
 
 .timeline_item:nth-child(3){
   margin-top: 48px;
-  position: relative;
-}
-
-.timeline_item:nth-child(4){
-  position: relative;
 }
 
 .timeline_item .time_dot_block{
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
-  margin-right: 13px;
   font-size: 0;
 }
 
 .timeline_item .card{
-  width: 260px;
-  height: 136px;
+  max-width: 260px;
   border: 1px solid #FB56BF;
   border-radius: 10px;
   background-color: #FFFFFF;
@@ -345,33 +334,17 @@ h2{
   line-height: 16px;
   letter-spacing: 0.53px;
   font-weight: bold;
-  padding: 8px 0;
-}
-
-@media screen and (max-width: 600px){
-  .timeline_item .card{
-    width: 200px;
-    height: 170px;
-  }
-}
-
-@media screen and (max-width: 460px){
-  .timeline_item .card{
-    width: 150px;
-    height: 220px;
-  }
+  padding: 8px 10px;
 }
 
 .timeline_item.right .card{
   left: 52%;
-  padding-left: 12px;
   margin-left: 10px;
   text-align: left;
 } 
 
 .timeline_item.left .card{
   right: 52%;
-  padding-right: 12px;
   margin-right: 10px;
   text-align: right;
 } 
@@ -393,20 +366,20 @@ h2{
 }
 
 .timeline_item .card span{
-  width: 120%;
+  width: 100%;
   display: inline-block;
   font-size: 12px;
   font-weight: normal;
   color: #9B9B9B;
   letter-spacing: 0.44px;
   line-height: 18px;
-  transform: scale(0.83);
+  /* transform: scale(0.83); */
   transform-origin:left top;
   word-wrap:break-word;
 }
 
 .timeline_item.left .card span{
-  padding-left: 12px;
+  transform-origin:right top;
 }
 
 /* 個人作品區塊 */
@@ -561,5 +534,6 @@ h2{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 1.5vw;
+  white-space: nowrap;
 }
