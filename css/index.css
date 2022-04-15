@@ -335,17 +335,16 @@ h2{
   letter-spacing: 0.53px;
   font-weight: bold;
   padding: 8px 10px;
+  margin: 0 10px;
 }
 
 .timeline_item.right .card{
   left: 52%;
-  margin-left: 10px;
   text-align: left;
 } 
 
 .timeline_item.left .card{
   right: 52%;
-  margin-right: 10px;
   text-align: right;
 } 
 
